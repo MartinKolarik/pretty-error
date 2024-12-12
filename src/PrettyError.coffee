@@ -5,7 +5,7 @@ nodePaths = require './nodePaths'
 RenderKid = require 'renderkid'
 merge = require 'lodash/merge'
 
-arrayUtils = 
+arrayUtils =
   pluckByCallback: (a, cb) ->
     return a if a.length < 1
     removed = 0
@@ -37,7 +37,7 @@ arrayUtils =
 
     a.length = a.length - 1 if reached
     a
-  
+
 instance = null
 
 module.exports = class PrettyError
@@ -71,7 +71,7 @@ module.exports = class PrettyError
     @_filterCallbacks = []
     @_parsedErrorFilters = []
     @_aliases = []
-    @_renderer = new RenderKid
+    @_renderer = new RenderKid({ layout: { terminalWidth: 9999 } })
     @_style = self._getDefaultStyle()
     @_renderer.style @_style
 

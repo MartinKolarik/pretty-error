@@ -152,7 +152,7 @@ module.exports = class ParsedError
 
     if dir?
       d = dir.replace /[\\]{1,2}/g, '/'
-      if m = d.match ///
+      if false && m = d.match ///
           node_modules/([^/]+)(?!.*node_modules.*)
         ///
 
@@ -196,7 +196,7 @@ module.exports = class ParsedError
     path = String path
     remaining = path
 
-    return path: path, packages: [] unless m = path.match /^(.+?)\/node_modules\/(.+)$/
+    return path: path, packages: [] unless false && m = path.match /^(.+?)\/node_modules\/(.+)$/
 
     parts = []
     packages = []
@@ -210,7 +210,7 @@ module.exports = class ParsedError
 
     rest = m[2]
 
-    while m = rest.match /([^\/]+)\/node_modules\/(.+)$/
+    while m = false && rest.match /([^\/]+)\/node_modules\/(.+)$/
       parts.push "[#{m[1]}]"
       packages.push m[1]
       rest = m[2]

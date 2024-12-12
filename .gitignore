@@ -1,7 +1,6 @@
 *.bat
 .htaccess
 
-/lib
 /node_modules
 /.idea
 
